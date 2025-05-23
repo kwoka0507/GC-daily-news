@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>중화권 Daily Gaming News - 아카이브</title>
+
+<!-- 기본 메타 정보 -->
+<meta name="description" content="중화권 게임 산업의 최신 뉴스와 동향을 매일 업데이트하는 아카이빙 페이지입니다.">
+<meta name="keywords" content="게임 뉴스, 중화권 게임 산업, 게임 트렌드, 일일 게임 뉴스">
+<meta name="author" content="NEXON KOREA">
+<meta name="robots" content="index, follow">
+
+<!-- 이모지 파비콘 (SVG 방식) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f172a;
+  font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+  font-size: 14px;
+  color: #f1f5f9;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto 40px;
+  padding: 0 20px;
+}
+
+/* 헤더 스타일 수정 - 박스 제거 및 아이콘 강조 */
+.header {
+  margin-bottom: 35px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes float-icon {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.header-icon-container {
+  width: 70px;
+  height: 70px;
+  margin-right: 25px;
+  background: linear-gradient(135deg, #059669, #10b981);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.3);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.header-icon {
+  font-size: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px; /* 명시적인 높이 설정 */
+  width: 36px; /* 명시적인 너비 설정 */
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  position: relative;
+  top: -2px; /* 미세 조정 */
+  animation: float-icon 3s ease-in-out infinite;
+}
+
+/* 아이콘 주변 빛나는 효과 */
+.header-icon-container::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: linear-gradient(135deg, #059669, #10b981);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.3;
+  animation: pulse-soft 2s infinite;
+}
+
+@keyframes pulse-soft {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.05); opacity: 0.15; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  font-size: 15px;
+  color: #a1a9b5;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.archive-item {
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.3s, background-color 0.3s;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(5, 150, 105, 0.1);
+}
+
+.archive-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(5, 150, 105, 0.1);
+  background-color: #263548;
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.archive-item.hidden {
+  display: none;
+}
+
+.item-content {
+  padding: 20px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.weekday-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: rgba(5, 150, 105, 0.15);
+  color: #34d399;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 8px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.date-full {
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+.new-badge {
+  display: inline-block;
+  background-color: #ef4444;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 20px;
+  margin-left: 8px;
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+  letter-spacing: 0.3px;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); opacity: 1; }
+  70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); opacity: 0.8; }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); opacity: 1; }
+}
+
+.view-button {
+  display: flex;
+  align-items: center;
+  color: #10b981;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.view-button svg {
+  margin-left: 6px;
+  transition: transform 0.2s;
+}
+
+.archive-item:hover .view-button {
+  background-color: rgba(5, 150, 105, 0.1);
+  transform: translateX(2px);
+}
+
+.archive-item:hover .view-button svg {
+  transform: translateX(4px);
+}
+
+.item-subtitle {
+  font-size: 13px;
+  color: #A1A9B5;
+  margin: 12px 0 0;
+  padding-left: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.load-more-container {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.load-more-button {
+  background-color: #2d3748;
+  color: white;
+  border: 1px solid #4b5563;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.load-more-button:hover {
+  background-color: #374151;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.load-more-button .icon {
+  margin-left: 10px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.load-more-button:hover .icon {
+  transform: translateY(3px);
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #9ca3af;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+  margin-top: 40px;
+}
+
+.footer a {
+  color: #34d399;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .view-button {
+    margin-top: 12px;
+    align-self: flex-end;
+  }
+
+  /* 모바일 헤더 조정 */
+  .header-icon-container {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+  }
+
+  .header-icon {
+    font-size: 28px;
+    height: 30px;
+    width: 30px;
+  }
+
+  .header-title {
+    font-size: 22px;
+  }
+
+  .header-subtitle {
+    font-size: 14px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- 헤더 - 간결하게 수정하고 아이콘 강조 -->
+  <div class="header">
+    <div class="header-icon-container">
+      <div class="header-icon">🎮</div>
+    </div>
+    <div class="header-text">
+      <h1 class="header-title">중화권 Daily Gaming News</h1>
+      <p class="header-subtitle">중화권 게임 산업 최신 동향 아카이브</p>
+    </div>
+  </div>
+
+  <!-- 아카이브 리스트 -->
+  <div class="archive-list" id="newsArchive">
+    <!-- ITEMS_BEGIN -->
+    <!-- ITEMS_END -->
+  </div>
+
+  <!-- 더보기 버튼 -->
+  <div class="load-more-container">
+    <button class="load-more-button" id="loadMoreButton">
+      더 많은 뉴스레터 불러오기
+      <span class="icon">↓</span>
+    </button>
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer">
+    <p>© 2025 NEXON KOREA | ER사업실 오토브리핑</p>
+    <p>문의: <a href="mailto:ER-OverseasBiz@nexon.co.kr">ER-OverseasBiz@nexon.co.kr</a></p>
+  </div>
+</div>
+
+<!-- 마지막 업데이트 정보 -->
+<div style="display:none;" id="last-update-info">
+  <!-- LAST_UPDATE_MARKER -->
+  <!-- 마지막 업데이트 정보가 여기에 저장됩니다 -->
+</div>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // NEW 배지 관리
+  const existingBadges = document.querySelectorAll('.new-badge');
+  existingBadges.forEach(badge => badge.remove());
+
+  const archiveList = document.getElementById('newsArchive');
+  const allItems = archiveList.querySelectorAll('.archive-item');
+
+  // 첫 번째 항목에 NEW 배지 추가
+  if (allItems.length > 0) {
+    const firstItem = allItems[0];
+    const dateContainer = firstItem.querySelector('.date-container');
+    if (dateContainer) {
+      const newBadge = document.createElement('div');
+      newBadge.className = 'new-badge';
+      newBadge.textContent = 'NEW';
+      dateContainer.appendChild(newBadge);
+    }
+  }
+
+  // 자동 페이징 기능 구현
+  const itemsPerPage = 5; // 한 페이지에 표시할 항목 수
+  let currentPage = 1;
+
+  // 초기 페이지 설정
+  function initializePagination() {
+    // 총 페이지 수 계산
+    const totalPages = Math.ceil(allItems.length / itemsPerPage);
+
+    // 모든 항목 초기에 숨김
+    allItems.forEach((item, index) => {
+      if (index >= itemsPerPage) {
+        item.classList.add('hidden');
+      }
+    });
+
+    // 마지막 페이지인 경우 '더보기' 버튼 숨김
+    if (totalPages <= 1) {
+      document.getElementById('loadMoreButton').style.display = 'none';
+    }
+
+    return totalPages;
+  }
+
+  const totalPages = initializePagination();
+
+  // 더보기 버튼 클릭 이벤트
+  const loadMoreButton = document.getElementById('loadMoreButton');
+  loadMoreButton.addEventListener('click', function() {
+    if (currentPage < totalPages) {
+      currentPage++;
+
+      // 다음 페이지의 항목들 표시
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = Math.min(startIndex + itemsPerPage, allItems.length);
+
+      let firstNewlyVisibleItem = null;
+
+      for (let i = startIndex; i < endIndex; i++) {
+        allItems[i].classList.remove('hidden');
+        if (!firstNewlyVisibleItem) {
+          firstNewlyVisibleItem = allItems[i];
+        }
+      }
+
+      // 부드러운 스크롤 효과
+      if (firstNewlyVisibleItem) {
+        setTimeout(() => {
+          firstNewlyVisibleItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      }
+
+      // 마지막 페이지인 경우 '더보기' 버튼 숨김
+      if (currentPage >= totalPages) {
+        loadMoreButton.style.display = 'none';
+      }
+    }
+  });
+
+  // 새 항목이 추가될 때 자동으로 페이지 재계산하는 기능
+  window.recalculatePagination = function() {
+    const updatedItems = archiveList.querySelectorAll('.archive-item');
+
+    // 첫 번째 페이지만 표시하고 나머지는 숨김
+    updatedItems.forEach((item, index) => {
+      if (index < itemsPerPage) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+
+    // 총 페이지 수 재계산
+    const newTotalPages = Math.ceil(updatedItems.length / itemsPerPage);
+
+    // 더보기 버튼 표시 여부 결정
+    if (newTotalPages <= 1) {
+      loadMoreButton.style.display = 'none';
+    } else {
+      loadMoreButton.style.display = 'inline-flex';
+    }
+
+    // 현재 페이지 초기화
+    currentPage = 1;
+
+    return newTotalPages;
+  };
+});
+</script>
+</body>
+</html>

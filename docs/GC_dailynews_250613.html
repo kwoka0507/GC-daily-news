@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🀄 ER Biz - 중화권 Daily Game Brief</title>
+<style>
+/* 기본 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  background: #111827;
+  font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+  font-size: 14px;
+  color: #f9fafb;
+  line-height: 1.5;
+}
+
+/* 테이블 기본 스타일 재설정 */
+table {
+  border-collapse: collapse;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* 반응형 이미지 */
+img {
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+  border: 0;
+  height: auto;
+  outline: none;
+  text-decoration: none;
+}
+
+/* 링크 스타일 - 대나무 테마로 변경 */
+a {
+  color: #86efac;
+  text-decoration: none;
+}
+
+/* 공통 요소 - 대나무 테마로 변경 */
+.section-title {
+  font-size: 18px;
+  color: #FDFEFE;
+  margin: 0 0 20px;
+  border-left: 4px solid #059669;
+  padding-left: 12px;
+  font-weight: bold;
+}
+
+.card {
+  background-color: #1e293b;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #374151;
+  overflow: hidden;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #1f2937;
+  color: #059669;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid #059669;
+}
+
+/* 뉴스 아이템 클래스 - 최적화 */
+.news-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.headline-icon {
+  color: #ef4444;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: -0.5pt;
+  vertical-align: middle;
+}
+
+.headline-content {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  letter-spacing: -0.5pt;
+}
+
+.headline-text {
+  color: #d1d5db;
+}
+
+.headline-meta {
+  font-size: 12px;
+  font-weight: normal;
+  color: #9ca3af;
+  margin-left: 8px;
+  letter-spacing: -0.5pt;
+}
+
+.source-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: rgba(5, 150, 105, 0.2);
+  color: #86efac;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  margin: 0 4px 8px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.tag-bamboo { background-color: #059669; }
+.tag-green { background-color: #10b981; }
+.tag-purple { background-color: #695FEB; }
+
+.category-label {
+  padding: 6px 12px;
+  color: white;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 15px;
+  letter-spacing: -0.5pt;
+}
+
+/* 푸터 링크 - 대나무 테마로 변경 */
+.footer-link {
+  display: block;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background-color: #1e293b;
+  border-left: 4px solid #059669;
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 0 4px 4px 0;
+  letter-spacing: -0.5px;
+}
+
+/* 알림 텍스트 */
+.notice-text {
+  margin: 0 0 8px;
+  font-size: 10px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* 원본 보기 버튼 - 강화된 버튼 디자인 */
+.original-btn {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-left: 10px;
+  background-color: #1f2937;
+  border: 1px solid #059669;
+  border-radius: 4px;
+  color: #86efac;
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 섹션 간격 */
+.section-gap {
+  height: 30px;
+}
+
+/* 반응형 미디어 쿼리 */
+@media only screen and (max-width: 650px) {
+  .main-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .main-content {
+    width: 100% !important;
+  }
+
+  /* 간격 확보 */
+  .spacer-cell {
+    width: 15px !important;
+  }
+
+  /* 텍스트 크기 조정 */
+  .header-title {
+    font-size: 24px !important;
+  }
+
+  .news-title {
+    font-size: 15px !important;
+  }
+
+  .news-description {
+    font-size: 13px !important;
+  }
+
+  /* 여백 조정 */
+  .container-padding {
+    padding: 20px 15px !important;
+  }
+
+  /* 헤더 내 여백 조정 */
+  .header-cell {
+    padding: 30px 15px !important;
+  }
+
+  /* 푸터 컬럼 조정 */
+  .footer-column {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .footer-info {
+    padding-right: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .btn-cell {
+    padding-top: 10px !important;
+  }
+
+  /* 섹션 간격 */
+  .section-gap {
+    height: 20px !important;
+  }
+}
+
+/* 더 작은 모바일 화면 */
+@media only screen and (max-width: 480px) {
+  /* 메타 정보 조정 */
+  .news-meta-row td {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .news-meta-row td:last-child {
+    text-align: left !important;
+    padding-top: 8px !important;
+  }
+
+  /* 기타 미세 조정 */
+  .header-title {
+    font-size: 20px !important;
+  }
+
+  .section-title {
+    font-size: 16px !important;
+  }
+
+  /* 알림 텍스트 - 모바일 */
+  .notice-text {
+    font-size: 9px !important;
+  }
+
+  .original-btn {
+    padding: 2px 6px !important;
+    font-size: 9px !important;
+  }
+}
+</style>
+</head>
+<body>
+<!-- preheader 텍스트 -->
+<div style="font-size: 0px; color: transparent; display: none; height: 0; width: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all;">🔥Breaking: 미호요, 도시 오픈월드 게임 신규 채용</div>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#111827">
+<tr>
+<td align="center" style="padding: 0 20px;">
+<!-- 메인 컨테이너 - 반응형 너비 적용 -->
+<table width="800" class="main-container" cellpadding="0" cellspacing="0" border="0" style="margin: 20px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<!-- 경고 텍스트와 원본 보기 버튼 - 우측 정렬 -->
+<!-- 경고 텍스트와 원본 보기 버튼 - 우측 정렬 -->
+<tr>
+  <td style="padding: 10px 20px 5px; background-color: #111827; text-align: right;">
+    <span style="font-size: 10px; color: #6b7280; font-style: italic;">
+      ⚠️ 모바일 및 새 Outlook 보기에 최적화 되어 있습니다.
+    </span>
+    <a href="https://kwoka0507.github.io/GC-daily-news/" target="_blank" style="display: inline-block; padding: 3px 8px; margin-left: 10px; background-color: #1f2937 !important; border: 1px solid #059669; border-radius: 4px; color: #86efac; font-size: 10px; font-weight: bold; text-decoration: none; font-style: normal; vertical-align: middle;">
+      원본 보기
+    </a>
+  </td>
+</tr>
+          </tr>
+          
+          <!-- 헤더 - 대나무 테마로 변경 -->
+        <tr>
+          <td align="center" class="header-cell" style="padding: 48px 20px; background-color: #047857; background: linear-gradient(135deg, #047857, #059669); color: #ffffff; border-radius: 12px 12px 0 0;">
+            <h1 class="header-title" style="margin: 0; font-size: 28px; letter-spacing: -0.5px;">🀄 [중화권] Daily Global Game News</h1>
+            <div style="display: inline-block; margin-top: 15px; padding: 6px 16px; background-color: rgba(0,0,0,0.2); border-radius: 20px;">
+              <p style="margin: 0; font-size: 14px; color: #ffffff;">2025년 06월 13일　|　ER사업실 오토브리핑</p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Main content -->
+          ```html
+<tr>
+  <td class="container-padding main-content" style="padding: 30px 20px; background-color: #111827;">
+    <h2 class="section-title">🔥 HOT 트렌드</h2>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">[미호요, UE5 도시 오픈월드 게임 신규 채용]</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">미호요가 UE5 엔진을 활용한 도시 오픈월드 RPG 개발을 위해 대규모 인재 채용에 나섰다. 이는 미호요의 신작 프로젝트 일환이며, 막대한 자금을 투자해 차기 플래그십 게임을 준비하고 있는 것으로 알려졌다. 게임은 도시를 배경으로 풍부한 서브 콘텐츠를 제공할 계획이다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook</span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/06/571980/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">[전직 블리자드 창립자의 신작 '무주성연']</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">블리자드의 전 창립자 Mike Morhaime가 설립한 Dreamhaven이 개발한 신작 '무주성연(WildGate)'이 Steam에서 테스트를 시작했다. 이 게임은 빠르고 긴박한 전투와 다양한 협동 플레이로 주목받고 있으며, 특히 몇몇 해외 커뮤니티에서 긍정적인 평가를 얻고 있다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook</span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/06/571938/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">[게임Freak의 신작 '루프 비스트']</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">게임Freak가 포켓몬 시리즈를 떠나, 보다 사실적인 그래픽을 추구한 신작 '루프 비스트'를 공개했다. 이 작품은 XBOX Series, PS5, 그리고 PC 플랫폼에서 출시될 예정이며, 초기 공개 영상에서 높은 기대감을 받고 있다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook</span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/06/571937/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </td>
+</tr>
+```
+          <tr>
+<td class="container-padding main-content" style="padding: 0 20px 30px;">
+<h2 class="section-title" style="letter-spacing: -0.5pt;">📢 주요 헤드라인</h2>
+
+<!-- 규제 & 이슈 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #ef4444 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  규제 & 이슈
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72387/tencent-said-to-study-deal-for-15-billion-for-nexon" style="color: #ef4444; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72387/tencent-said-to-study-deal-for-15-billion-for-nexon" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">Tencent, $150억에 Nexon 인수 검토 중 - Ubisoft 인수 실패 후 새 목표 설정</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 게임 출시 & 발표 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #059669 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  게임 출시 & 발표
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/06/571938/" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/06/571938/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">Blizzard 창립자의 신작, 《Uncharted Abyss》 Steam 베타 테스트 - 해외에서는 긍정적 반응, 중국에서는 조금 아쉬움?</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/06/571937/" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/06/571937/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">"여성 버전의 Shadow Blade?" Pokemon 개발사의 3A액션 신작, 《Shadow Blade Zero》의 자신감을 더하다</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/06/572044/" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/06/572044/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">새롭게 본 2차원 오픈월드 신작 - "보고 나서 바로 투자했습니다…"</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.youxituoluo.com/533501.html" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.youxituoluo.com/533501.html" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">추가된 7명의 새로운 캐릭터와 3종의 새로운 외관 - 《Double Helix》 세 번째 테스트가 6월 12일 시작됩니다</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">Youxituoluo · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72390/silent-hill-remake-by-bloober-team-announced" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72390/silent-hill-remake-by-bloober-team-announced" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">Silent Hill 원작 리메이크 개발 시작 - Bloober Team이 개발을 담당한다</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72372/resident-evil-9-requiem-first-third-person-switch" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72372/resident-evil-9-requiem-first-third-person-switch" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">Resident Evil 9: Requiem, 첫 번째 및 세 번째 시점 전환 가능 - 주인공으로 Grace 확정</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=287128" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=287128" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">《청색 규칙》이세계 모험 MMORPG '별흔 공명' 출시 예정</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 매출 & 성과 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #2563eb !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  매출 & 성과
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/06/571980/" style="color: #2563eb; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/06/571980/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">미하유, Unreal Engine 5 기반 도시 오픈월드 개발 위해 대규모 채용 시작 - 선두주자에서 대미를 장식하기까지, 미하유의 야심 재점화!</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 업데이트 & 패치 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #7c3aed !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  업데이트 & 패치
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=287133" style="color: #7c3aed; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=287133" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">Metroid Delta: Snake Eater Xbox 버전 실황 영상 공개 - 새로운 온라인 대전 모드 "FOX HUNT" 추가 예정</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- IP & 콜라보 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #059669 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  IP & 콜라보
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=287053" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=287053" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">게임 뉴스 승리 여신: Nikke x Sword Star 콜라보레이션 큰 이벤트 "MEMORIES TELLER" 출시</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 커뮤니티 & 이벤트 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #059669 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  커뮤니티 & 이벤트
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/06/571893/" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/06/571893/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">게임 홍보 전문가의 10년 노하우 - 해외 게임 미디어와의 소통 방법 및 주의사항</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=287134" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=287134" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">《Eden's Zero》 체험판 출시 - 데이터 저장 후 정식 버전으로 이동 가능</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=287069" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=287069" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">새로운 시간 루프 오픈월드 게임 《The Cycle》 중국에서 예약 시작 - 첫 번째 홍보 영상 공개</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72386/towa-and-the-guardians-of-the-sacred-tree-demo-review" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72386/towa-and-the-guardians-of-the-sacred-tree-demo-review" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">음양과 시대의 발전 시스템을 갖춘 일본풍 로그라이크 액션 게임 《Eternal Tree》 트라이얼 리뷰</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-06-12</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 섹션 간격 추가 -->
+<div class="section-gap"></div>
+</td>
+</tr>
+          <tr>
+    <td style="padding: 0 20px 30px;">
+    <h2 class="section-title">📌 최다 언급 키워드</h2>
+    <div class="card" style="padding: 20px; background-color: #1e293b !important; border-radius: 10px; margin-bottom: 16px; border: 1px solid #374151; overflow: hidden;">
+    <!-- GameLook 키워드 -->
+    <div style="margin-bottom: 15px;">
+    <div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 GameLook 키워드</div>
+    <div>
+     <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Unreal Engine 5</span>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Uncharted Abyss</span>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">10년 노하우</span>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Shadow Blade Zero</span>
+          </td>
+        </tr>
+      </table>
+      
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">오픈월드 신작</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </div>
+
+    <!-- Youxituoluo 키워드 -->
+    <div style="margin-bottom: 15px;">
+    <div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 Youxituoluo 키워드</div>
+    <div>
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Double Helix</span>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">새로운 캐릭터</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </div>
+
+    <!-- 4Gamers 키워드 -->
+    <div style="margin-bottom: 15px;">
+    <div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 4Gamers 키워드</div>
+    <div>
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Eternal Tree</span>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Silent Hill 리메이크</span>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Tencent Nexon 인수</span>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Resident Evil 9</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </div>
+
+    <!-- GNN 키워드 -->
+    <div>
+    <div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 GNN 키워드</div>
+    <div>
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#ECB365" style="background-color: #ECB365 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Eden's Zero 체험판</span>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#ECB365" style="background-color: #ECB365 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Metroid Delta Xbox</span>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#ECB365" style="background-color: #ECB365 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">The Cycle 예약</span>
+          </td>
+        </tr>
+      </table>
+
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+        <tr>
+          <td bgcolor="#ECB365" style="background-color: #ECB365 !important; padding: 6px 12px; border-radius: 16px;">
+            <span style="color: white; font-size: 12px; font-weight: bold;">Nikke x Sword Star</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </div>
+    </div>
+    </td>
+    </tr>
+
+          <!-- 구분선 -->
+                <tr>
+                  <td align="center" style="padding: 0 20px;">
+                    <div style="max-width: 80px; height: 1px; background-color: #374151; margin: 0 auto 20px;"></div>
+                  </td>
+                </tr>
+
+                <!-- 푸터 시작 - 중화권 테마로 변경 -->
+                <tr>
+                  <td align="center" style="padding: 0 20px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 20px 0; border-spacing: 0;">
+                      <tr>
+                        <td align="center" style="padding: 40px 30px; background-color: #111827; border-radius: 0 0 12px 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <!-- 왼쪽 컬럼: 정보 -->
+                              <td style="vertical-align: top; padding-right: 40px; width: 60%;" class="footer-column footer-info">
+                                <p style="margin: 0 0 12px; font-size: 18px; color: #f9fafb; font-weight: 600; letter-spacing: -0.5px;">
+                                  NEXON Daily News - 중화권
+                                </p>
+                                <p style="margin: 0 0 20px; font-size: 13px; line-height: 1.7; color: #9ca3af; letter-spacing: -0.5px;">
+                                  ER사업실에서 Azure OpenAI를 활용하여 자동 생성하는 일간 뉴스레터로,
+                                  매일 오전 8시에 최신 중화권 게임 뉴스를 수집하여 분석합니다.
+                                </p>
+                                <p style="margin: 0; font-size: 13px; color: #6b7280; letter-spacing: -0.5px;">
+                                  © 2025 NEXON KOREA
+                                </p>
+                              </td>
+
+                              <!-- 오른쪽 컬럼: 링크들 -->
+                              <td style="vertical-align: top; width: 40%;" class="footer-column">
+                                <p style="margin: 0 0 14px; font-size: 16px; color: #f9fafb; font-weight: 600; letter-spacing: -0.5px;">
+                                  Quick Links
+                                </p>
+
+                                <a href="https://kwoka0507.github.io/GC-daily-news/" style="display: block; margin-bottom: 12px; padding: 12px 16px; background-color: #1e293b; border-left: 4px solid #059669; color: #f9fafb; text-decoration: none; font-size: 14px; border-radius: 0 4px 4px 0; transition: background-color 0.2s; letter-spacing: -0.5px;">
+                                  📚 지난 뉴스레터 아카이브
+                                </a>
+
+                                <a href="mailto:ER-OverseasBiz@nexon.co.kr" style="display: block; padding: 12px 16px; background-color: #1e293b; border-left: 4px solid #059669; color: #f9fafb; text-decoration: none; font-size: 14px; border-radius: 0 4px 4px 0; transition: background-color 0.2s; letter-spacing: -0.5px;">
+                                  ✉️ 문의 또는 피드백
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- 푸터 끝 -->
+              </table>
+            </td>
+          </tr>
+        </table>
+        </body>
+        </html>

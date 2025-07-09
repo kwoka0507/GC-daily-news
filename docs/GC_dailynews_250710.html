@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🀄 중화권 Daily Game Brief</title>
+<style>
+/* 기본 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  background: #111827;
+  font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+  font-size: 14px;
+  color: #f9fafb;
+  line-height: 1.5;
+}
+
+/* 테이블 기본 스타일 재설정 */
+table {
+  border-collapse: collapse;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* 반응형 이미지 */
+img {
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+  border: 0;
+  height: auto;
+  outline: none;
+  text-decoration: none;
+}
+
+/* 링크 스타일 - 대나무 테마로 변경 */
+a {
+  color: #86efac;
+  text-decoration: none;
+}
+
+/* 공통 요소 - 대나무 테마로 변경 */
+.section-title {
+  font-size: 18px;
+  color: #FDFEFE;
+  margin: 0 0 20px;
+  border-left: 4px solid #059669;
+  padding-left: 12px;
+  font-weight: bold;
+}
+
+.card {
+  background-color: #1e293b;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #374151;
+  overflow: hidden;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #1f2937;
+  color: #059669;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid #059669;
+}
+
+/* 뉴스 아이템 클래스 - 최적화 */
+.news-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.headline-icon {
+  color: #ef4444;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: -0.5pt;
+  vertical-align: middle;
+}
+
+.headline-content {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  letter-spacing: -0.5pt;
+}
+
+.headline-text {
+  color: #d1d5db;
+}
+
+.headline-meta {
+  font-size: 12px;
+  font-weight: normal;
+  color: #9ca3af;
+  margin-left: 8px;
+  letter-spacing: -0.5pt;
+}
+
+.source-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: rgba(5, 150, 105, 0.2);
+  color: #86efac;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  margin: 0 4px 8px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.tag-bamboo { background-color: #059669; }
+.tag-green { background-color: #10b981; }
+.tag-purple { background-color: #695FEB; }
+
+.category-label {
+  padding: 6px 12px;
+  color: white;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 15px;
+  letter-spacing: -0.5pt;
+}
+
+/* 푸터 링크 - 대나무 테마로 변경 */
+.footer-link {
+  display: block;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background-color: #1e293b;
+  border-left: 4px solid #059669;
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 0 4px 4px 0;
+  letter-spacing: -0.5px;
+}
+
+/* 알림 텍스트 */
+.notice-text {
+  margin: 0 0 8px;
+  font-size: 10px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* 원본 보기 버튼 - 강화된 버튼 디자인 */
+.original-btn {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-left: 10px;
+  background-color: #1f2937;
+  border: 1px solid #059669;
+  border-radius: 4px;
+  color: #86efac;
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 섹션 간격 */
+.section-gap {
+  height: 30px;
+}
+
+/* 반응형 미디어 쿼리 */
+@media only screen and (max-width: 650px) {
+  .main-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .main-content {
+    width: 100% !important;
+  }
+
+  /* 간격 확보 */
+  .spacer-cell {
+    width: 15px !important;
+  }
+
+  /* 텍스트 크기 조정 */
+  .header-title {
+    font-size: 24px !important;
+  }
+
+  .news-title {
+    font-size: 15px !important;
+  }
+
+  .news-description {
+    font-size: 13px !important;
+  }
+
+  /* 여백 조정 */
+  .container-padding {
+    padding: 20px 15px !important;
+  }
+
+  /* 헤더 내 여백 조정 */
+  .header-cell {
+    padding: 30px 15px !important;
+  }
+
+  /* 푸터 컬럼 조정 */
+  .footer-column {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .footer-info {
+    padding-right: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .btn-cell {
+    padding-top: 10px !important;
+  }
+
+  /* 섹션 간격 */
+  .section-gap {
+    height: 20px !important;
+  }
+}
+
+/* 더 작은 모바일 화면 */
+@media only screen and (max-width: 480px) {
+  /* 메타 정보 조정 */
+  .news-meta-row td {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .news-meta-row td:last-child {
+    text-align: left !important;
+    padding-top: 8px !important;
+  }
+
+  /* 기타 미세 조정 */
+  .header-title {
+    font-size: 20px !important;
+  }
+
+  .section-title {
+    font-size: 16px !important;
+  }
+
+  /* 알림 텍스트 - 모바일 */
+  .notice-text {
+    font-size: 9px !important;
+  }
+
+  .original-btn {
+    padding: 2px 6px !important;
+    font-size: 9px !important;
+  }
+}
+</style>
+</head>
+<body>
+<!-- preheader 텍스트 -->
+<div style="font-size: 0px; color: transparent; display: none; height: 0; width: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all;">🔥Breaking: 완미 세계 반부패 여파: 《백만 아서왕》 서비스 종료 발표</div>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#111827">
+<tr>
+<td align="center" style="padding: 0 20px;">
+<!-- 메인 컨테이너 - 반응형 너비 적용 -->
+<table width="800" class="main-container" cellpadding="0" cellspacing="0" border="0" style="margin: 20px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<!-- 경고 텍스트와 원본 보기 버튼 - 우측 정렬 -->
+<!-- 경고 텍스트와 원본 보기 버튼 - 우측 정렬 -->
+<tr>
+  <td style="padding: 10px 20px 5px; background-color: #111827; text-align: right;">
+    <span style="font-size: 10px; color: #6b7280; font-style: italic;">
+      ⚠️ 모바일 및 새 Outlook 보기에 최적화 되어 있습니다.
+    </span>
+    <a href="https://kwoka0507.github.io/GC-daily-news/" target="_blank" style="display: inline-block; padding: 3px 8px; margin-left: 10px; background-color: #1f2937 !important; border: 1px solid #059669; border-radius: 4px; color: #86efac; font-size: 10px; font-weight: bold; text-decoration: none; font-style: normal; vertical-align: middle;">
+      원본 보기
+    </a>
+  </td>
+</tr>
+          </tr>
+          
+          <!-- 헤더 - 대나무 테마로 변경 -->
+        <tr>
+          <td align="center" class="header-cell" style="padding: 48px 20px; background-color: #047857; background: linear-gradient(135deg, #047857, #059669); color: #ffffff; border-radius: 12px 12px 0 0;">
+            <h1 class="header-title" style="margin: 0; font-size: 28px; letter-spacing: -0.5px;">🀄 [중화권] Daily Global Game News</h1>
+            <div style="display: inline-block; margin-top: 15px; padding: 6px 16px; background-color: rgba(0,0,0,0.2); border-radius: 20px;">
+              <p style="margin: 0; font-size: 14px; color: #ffffff;">2025년 07월 10일　|　오토브리핑</p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Main content -->
+          <tr>
+  <td class="container-padding main-content" style="padding: 30px 20px; background-color: #111827;">
+    <h2 class="section-title">🔥 HOT 트렌드</h2>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">완미 세계 반부패 여파: 《백만 아서왕》 신규작, 해외 출시 후 1년 이내에 서비스 종료 발표</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">SE 정품 라이선스를 받은 완미세계의 《乖离性百万亚瑟王：环》은 2025년 8월 19일 정오에 서버를 완전히 종료할 것입니다. 작년 8월 29일부터 국제 서버로 출시된 이 게임은 아직 1년이 되지 않았습니다. 《백만 아서왕》 시리즈는 국내 이차원 카드 뽑기 모바일 게임의 선구자로 알려져 있으며, 많은 팬들에게 추억이 됩니다. 완미세계는 내부 반부패 조사에서 다수의 고위직이 공급업체로부터 뇌물을 수수하고 회사 규정을 위반했다는 사실을 발견하여 서비스 종료로 이어졌다는 발표를 했습니다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook</span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/07/574203/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">소니 전 총재 솔직 발언: "3A 게임 수익 내기 정말 어렵다", 닌텐도도 경고: "개발 속도 필수적으로 높여야"</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">최근 몇 주 동안 소니 전 총재인 요시다 슈헤이는 Kit & Krysta라는 유튜브 채널과의 인터뷰에서 현재 3A 게임의 어려움을 공유했습니다. 그는 게임 규모와 예산의 증가가 산업 내부에 구조적 문제를 야기하고 있다며, 특히 PS3에서 PS5로의 변화 사이에서 게임 개발 비용이 지속적으로 상승하고 있음을 강조했습니다. 이로 인해 개발 팀은 프로젝트 범위를 줄여야 하며, 사용자들은 훨씬 더 작은 규모의 게임을 선호하는 경향이 있다고 말했습니다. 닌텐도도 개발 속도를 높여야 한다고 경고했습니다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook</span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/07/574179/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">미하요의 "미니게임 플랫폼", UGC 모집을 공식적으로 시작하다</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">미하요가 최근 《원신》의 사용자 제작 콘텐츠(UGC) 테스트 참가자 모집을 발표하며 미니게임 플랫폼 구축 의도를 드러냈습니다. 이미 지난해부터 UGC 콘텐츠 개발을 위한 계획 채용을 시작했으며, 이는 Roblox와 비슷한 플랫폼을 목표로 하고 있습니다. 게임 내 사용자 생성 콘텐츠는 게임의 장기적인 생명력을 연장시킬 수 있는 핵심 요소로 많은 기대를 받고 있습니다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook</span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/07/574184/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">Bilibili World 주목할 게임 행사, 한국 매체에서는 '중국의 최고의 게임 전시회'로 극찬</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">Bilibili World(BW)가 이번 주에 개막하면서, 한국 게임 매체에서는 BW가 "중국 최대형의 이차원과 게임 종합 전시회"로 빠르게 성장했다고 극찬했습니다. 이미 매진된 70만 명의 티켓 예약 인원은 이 행사의 인기를 그대로 보여주며, 이는 Bilibili 자체의 강력한 콘텐츠 전파 능력을 이용해 전 세계의 개발자들이 자신들의 게임을 소개하는 전시 무대로 사용됩니다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook</span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/07/574141/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </td>
+</tr>
+          <tr>
+<td class="container-padding main-content" style="padding: 0 20px 30px;">
+<h2 class="section-title" style="letter-spacing: -0.5pt;">📢 주요 헤드라인</h2>
+
+<!-- 규제 & 이슈 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #ef4444 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  규제 & 이슈
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72911/pc-microsoft-store-version-of-call-of-duty-wwii-is-offline-due-to-remote-code-execution-exploits" style="color: #ef4444; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72911/pc-microsoft-store-version-of-call-of-duty-wwii-is-offline-due-to-remote-code-execution-exploits" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">COD: WWII, 원격 코드 실행 취약점 발견되어 Activision 긴급 서버 종료</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/07/574161/" style="color: #ef4444; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/07/574161/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">일본 대형 게임사가 미쳤다: '직원의 절반 교체, AI로 대체', 제안은 반드시 AI로 각각</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/07/574179/" style="color: #ef4444; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/07/574179/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">전 소니 사장의 솔직 발언: "AAA 게임 회수 정말 어렵다", 닌텐도도 경고: "개발 속도 향상 필수"</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72886/ubisoft-eula-clause-destroy-your-games-is-not-new-or-unique" style="color: #ef4444; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72886/ubisoft-eula-clause-destroy-your-games-is-not-new-or-unique" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'게임 죽이기 중단' 청원으로 Ubisoft 이용자 약관에 외신 주목, 사실 업계 전반에 존재</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-07-08</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72879/video-games-europe-against-stop-killing-the-games" style="color: #ef4444; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72879/video-games-europe-against-stop-killing-the-games" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">Security concerns and costs: European video game association opposes 'stop killing games' petition</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-07-08</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 게임 출시 & 발표 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #059669 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  게임 출시 & 발표
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72894/lover-kiss-endless-memories-version-coming-to-steam-and-ns2" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72894/lover-kiss-endless-memories-version-coming-to-steam-and-ns2" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'LoveR Kiss Endless Memories' 강화판이 11월 Steam/NS2에 출시, 보다 자유로운 사진 모드 추가</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288645" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288645" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'카에스 꿈', PC 및 Google Play 사전 예약 시작, 게임의 세계 및 특징 소개 영상 공개</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288647" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288647" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'Play Now' 팀의 신작 'Time Flies', 7월말 출시, 꿈을 이루고 싶은 파리를 연기합니다</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288604" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288604" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'동아시아 기획 대형 비디오 게임 컬렉션' PS4/PS5/Switch 버전 8월 출시</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72878/steam-fishtopia" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72878/steam-fishtopia" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">카드팩을 열어 물고기를 잡는다! Steam의 수집 게임 'FISHTOPIA', 데모 체험 및 7/16 출시</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-07-08</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72882/steam-free-game-orbit-maze-will-soon-be-paid" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72882/steam-free-game-orbit-maze-will-soon-be-paid" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'Orbit Maze' 무료 플랫폼 어드벤처, 지오메트릭 중력이미로 도전 가능</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-07-08</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/07/574184/" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/07/574184/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">UGC 모집 개시, miHoYo의 '미니게임 플랫폼'이 진짜로 올까?</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 매출 & 성과 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #2563eb !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  매출 & 성과
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/07/574224/" style="color: #2563eb; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/07/574224/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">Tencent 대박! '삼각주 작전' 3개월만에 온라인 사용자 두 배 증가, 경쟁사들은 그저 배경?</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72876/bodybuilder-simulator-co-op-plan-to-release-at-second-half-of-2026" style="color: #2563eb; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72876/bodybuilder-simulator-co-op-plan-to-release-at-second-half-of-2026" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">Steam 4-player bodybuilding simulator "Bodybuilder Simulator CO-OP", friends can join in and work out together in a gym filled with muscle tension</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-07-08</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 업데이트 & 패치 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #7c3aed !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  업데이트 & 패치
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288608" style="color: #7c3aed; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288608" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'The Last of Us Part II Remastered' 무료 업데이트: 'Timeline Experience'로 새로운 스킨과 트로피 잠금 해제 가능</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288595" style="color: #7c3aed; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288595" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'푸른 파일' 신 이벤트 스토리 〈Code:BOX 천 년의 그림자가 몰려옵니다~ 하나의 질문과 두 개의 답변〉 및 3명의 신규 캐릭터</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- IP & 콜라보 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #059669 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  IP & 콜라보
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72900/yuriko-yamaguchi-replaces-atsuko-tanaka-in-voice-actor-roster" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72900/yuriko-yamaguchi-replaces-atsuko-tanaka-in-voice-actor-roster" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'One Piece' Robin 성우 山口由里子, 'Genshin Impact'의 라이도트를 맡는다</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288609" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288609" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">애니메이션 'BLADE & BASTARD' 주요 성우 명단 발표, 후루카와 신, 쿠스노키 도우등의 목소리 출연</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 커뮤니티 & 이벤트 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #059669 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  커뮤니티 & 이벤트
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/07/574141/" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/07/574141/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">70만 명이 티켓을 노리다, Bilibili World 이번 주 개막, 한국 매체 극찬: "중국 최고의 게임 전시회!"</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72884/pokemon-sleep-2nd-anniversary-event2025" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72884/pokemon-sleep-2nd-anniversary-event2025" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'Pokémon Sleep' 두 번째 기념일에 첫 오프라인 이벤트 개최, 시부야에 큰 사이즈의 스니킹 잠자는 Snorlax 등장</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-07-08</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288599" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=288599" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">2025 이스포츠 월드컵 11일 개막, Faker 등 유명 선수의 모습을 조각으로 표현한 새로운 프로모션 비디오 공개</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-07-09</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72881/monster-hunter-20th-anniversary-big-hunting-show-goods" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/72881/monster-hunter-20th-anniversary-big-hunting-show-goods" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">'Monster Hunter 20주년 - 대사냥 전시회'에서 다양한 상품 공개</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-07-08</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 섹션 간격 추가 -->
+<div class="section-gap"></div>
+</td>
+</tr>
+          <tr>
+    <td style="padding: 0 20px 30px;">
+        <h2 class="section-title">📌 최다 언급 키워드</h2>
+        <div class="card" style="padding: 20px; background-color: #1e293b !important; border-radius: 10px; margin-bottom: 16px; border: 1px solid #374151; overflow: hidden;">
+            <!-- GameLook 키워드 -->
+            <div style="margin-bottom: 15px;">
+                <div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 GameLook 키워드</div>
+                <div>
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">삼각주 작전</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">미니게임 플랫폼</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">Bilibili World</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">AI 대체</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">AAA 게임 회수</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">백만 아서왕</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 4Gamers 키워드 -->
+            <div style="margin-bottom: 15px;">
+                <div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 4Gamers 키워드</div>
+                <div>
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">COD: WWII 취약점</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">Steel Hunter 종료</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">Mario Kart 64 고고학</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">Robin 성우 교체</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">Mech Merc 무료화</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- GNN 키워드 -->
+            <div>
+                <div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 GNN 키워드</div>
+                <div>
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">Nintendo Switch 체험회</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">Silent Witch 학원 드라마</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">Fantasy Life i</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">Alice in Borderland 예고</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">이스포츠 월드컵</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">푸른 파일 신 이벤트</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+                        <tr>
+                            <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                                <span style="color: white; font-size: 12px; font-weight: bold;">Apple Arcade 신작</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+          <!-- 구분선 -->
+                <tr>
+                  <td align="center" style="padding: 0 20px;">
+                    <div style="max-width: 80px; height: 1px; background-color: #374151; margin: 0 auto 20px;"></div>
+                  </td>
+                </tr>
+
+                <!-- 푸터 시작 - 중화권 테마로 변경 -->
+                <tr>
+                  <td align="center" style="padding: 0 20px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 20px 0; border-spacing: 0;">
+                      <tr>
+                        <td align="center" style="padding: 40px 30px; background-color: #111827; border-radius: 0 0 12px 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <!-- 왼쪽 컬럼: 정보 -->
+                              <td style="vertical-align: top; padding-right: 40px; width: 60%;" class="footer-column footer-info">
+                                <p style="margin: 0 0 12px; font-size: 18px; color: #f9fafb; font-weight: 600; letter-spacing: -0.5px;">
+                                  Daily News - 중화권
+</p>
+<p style="margin: 0 0 15px; font-size: 13px; line-height: 1.7; color: 
+#9ca3af; letter-spacing: -0.5px;">
+    🚨기밀 유지: 관계자 외 외부 인원에게 링크 유출 및 공유를 금합니다.<br>
+    Azure OpenAI를 활용하여 자동 생성하는 일간 뉴스레터로, 매일 오전 8시에 최신 중화권 게임 뉴스를 수집하여 분석합니다.
+</p>
+
+                                
+                              </td>
+
+                              <!-- 오른쪽 컬럼: 링크들 -->
+                              <td style="vertical-align: top; width: 40%;" class="footer-column">
+                                <p style="margin: 0 0 14px; font-size: 16px; color: #f9fafb; font-weight: 600; letter-spacing: -0.5px;">
+                                  Quick Links
+                                </p>
+
+                                <a href="https://kwoka0507.github.io/GC-daily-news/" style="display: block; margin-bottom: 12px; padding: 12px 16px; background-color: #1e293b; border-left: 4px solid #059669; color: #f9fafb; text-decoration: none; font-size: 14px; border-radius: 0 4px 4px 0; transition: background-color 0.2s; letter-spacing: -0.5px;">
+                                  📚 지난 뉴스레터 아카이브
+                                </a>
+
+                                
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- 푸터 끝 -->
+              </table>
+            </td>
+          </tr>
+        </table>
+        </body>
+        </html>

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🀄 중화권 Daily Game Brief</title>
+<style>
+/* 기본 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  background: #111827;
+  font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+  font-size: 14px;
+  color: #f9fafb;
+  line-height: 1.5;
+}
+
+/* 테이블 기본 스타일 재설정 */
+table {
+  border-collapse: collapse;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* 반응형 이미지 */
+img {
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+  border: 0;
+  height: auto;
+  outline: none;
+  text-decoration: none;
+}
+
+/* 링크 스타일 - 대나무 테마로 변경 */
+a {
+  color: #86efac;
+  text-decoration: none;
+}
+
+/* 공통 요소 - 대나무 테마로 변경 */
+.section-title {
+  font-size: 18px;
+  color: #FDFEFE;
+  margin: 0 0 20px;
+  border-left: 4px solid #059669;
+  padding-left: 12px;
+  font-weight: bold;
+}
+
+.card {
+  background-color: #1e293b;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #374151;
+  overflow: hidden;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #1f2937;
+  color: #059669;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid #059669;
+}
+
+/* 뉴스 아이템 클래스 - 최적화 */
+.news-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.headline-icon {
+  color: #ef4444;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: -0.5pt;
+  vertical-align: middle;
+}
+
+.headline-content {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  letter-spacing: -0.5pt;
+}
+
+.headline-text {
+  color: #d1d5db;
+}
+
+.headline-meta {
+  font-size: 12px;
+  font-weight: normal;
+  color: #9ca3af;
+  margin-left: 8px;
+  letter-spacing: -0.5pt;
+}
+
+.source-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: rgba(5, 150, 105, 0.2);
+  color: #86efac;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  margin: 0 4px 8px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.tag-bamboo { background-color: #059669; }
+.tag-green { background-color: #10b981; }
+.tag-purple { background-color: #695FEB; }
+
+.category-label {
+  padding: 6px 12px;
+  color: white;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 15px;
+  letter-spacing: -0.5pt;
+}
+
+/* 푸터 링크 - 대나무 테마로 변경 */
+.footer-link {
+  display: block;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background-color: #1e293b;
+  border-left: 4px solid #059669;
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 0 4px 4px 0;
+  letter-spacing: -0.5px;
+}
+
+/* 알림 텍스트 */
+.notice-text {
+  margin: 0 0 8px;
+  font-size: 10px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* 원본 보기 버튼 - 강화된 버튼 디자인 */
+.original-btn {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-left: 10px;
+  background-color: #1f2937;
+  border: 1px solid #059669;
+  border-radius: 4px;
+  color: #86efac;
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 섹션 간격 */
+.section-gap {
+  height: 30px;
+}
+
+/* 반응형 미디어 쿼리 */
+@media only screen and (max-width: 650px) {
+  .main-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .main-content {
+    width: 100% !important;
+  }
+
+  /* 간격 확보 */
+  .spacer-cell {
+    width: 15px !important;
+  }
+
+  /* 텍스트 크기 조정 */
+  .header-title {
+    font-size: 24px !important;
+  }
+
+  .news-title {
+    font-size: 15px !important;
+  }
+
+  .news-description {
+    font-size: 13px !important;
+  }
+
+  /* 여백 조정 */
+  .container-padding {
+    padding: 20px 15px !important;
+  }
+
+  /* 헤더 내 여백 조정 */
+  .header-cell {
+    padding: 30px 15px !important;
+  }
+
+  /* 푸터 컬럼 조정 */
+  .footer-column {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .footer-info {
+    padding-right: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .btn-cell {
+    padding-top: 10px !important;
+  }
+
+  /* 섹션 간격 */
+  .section-gap {
+    height: 20px !important;
+  }
+}
+
+/* 더 작은 모바일 화면 */
+@media only screen and (max-width: 480px) {
+  /* 메타 정보 조정 */
+  .news-meta-row td {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .news-meta-row td:last-child {
+    text-align: left !important;
+    padding-top: 8px !important;
+  }
+
+  /* 기타 미세 조정 */
+  .header-title {
+    font-size: 20px !important;
+  }
+
+  .section-title {
+    font-size: 16px !important;
+  }
+
+  /* 알림 텍스트 - 모바일 */
+  .notice-text {
+    font-size: 9px !important;
+  }
+
+  .original-btn {
+    padding: 2px 6px !important;
+    font-size: 9px !important;
+  }
+}
+</style>
+</head>
+<body>
+<!-- preheader 텍스트 -->
+<div style="font-size: 0px; color: transparent; display: none; height: 0; width: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all;">🔥Breaking: 일본, 애플·구글 외부 결제 요구</div>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#111827">
+<tr>
+<td align="center" style="padding: 0 20px;">
+<!-- 메인 컨테이너 - 반응형 너비 적용 -->
+<table width="800" class="main-container" cellpadding="0" cellspacing="0" border="0" style="margin: 20px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<!-- 경고 텍스트와 원본 보기 버튼 - 우측 정렬 -->
+<!-- 경고 텍스트와 원본 보기 버튼 - 우측 정렬 -->
+<tr>
+  <td style="padding: 10px 20px 5px; background-color: #111827; text-align: right;">
+    <span style="font-size: 10px; color: #6b7280; font-style: italic;">
+      ⚠️ 모바일 및 새 Outlook 보기에 최적화 되어 있습니다.
+    </span>
+    <a href="https://kwoka0507.github.io/GC-daily-news/" target="_blank" style="display: inline-block; padding: 3px 8px; margin-left: 10px; background-color: #1f2937 !important; border: 1px solid #059669; border-radius: 4px; color: #86efac; font-size: 10px; font-weight: bold; text-decoration: none; font-style: normal; vertical-align: middle;">
+      원본 보기
+    </a>
+  </td>
+</tr>
+          </tr>
+          
+          <!-- 헤더 - 대나무 테마로 변경 -->
+        <tr>
+          <td align="center" class="header-cell" style="padding: 48px 20px; background-color: #047857; background: linear-gradient(135deg, #047857, #059669); color: #ffffff; border-radius: 12px 12px 0 0;">
+            <h1 class="header-title" style="margin: 0; font-size: 28px; letter-spacing: -0.5px;">🀄 [중화권] Daily Global Game News</h1>
+            <div style="display: inline-block; margin-top: 15px; padding: 6px 16px; background-color: rgba(0,0,0,0.2); border-radius: 20px;">
+              <p style="margin: 0; font-size: 14px; color: #ffffff;">2025년 08월 16일　|　오토브리핑</p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Main content -->
+          <tr>
+  <td class="container-padding main-content" style="padding: 30px 20px; background-color: #111827;">
+    <h2 class="section-title">🔥 HOT 트렌드</h2>
+
+    <!-- 실제 크롤링된 기사만 이 형식으로 출력 -->
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">일본, 애플·구글에 외부 결제 시스템 허용 요구</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">일본 공정거래위원회는 애플과 구글에 외부 결제 시스템을 허용하도록 요구하는 '모바일 소프트웨어 경쟁 법안'을 발표했다. 해당 법안은 2025년 12월 18일부터 시행되며, 이는 유럽연합의 규제와 일치하는 내용이다. 개발자들에게 더 많은 선택지를 제공하게 될 것으로 보인다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook </span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/08/576469/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">넷이즈, Q2 게임 매출 14.6% 증가</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">넷이즈는 올해 2분기 게임 매출이 전년 대비 14.6% 증가한 221.38억 위안을 기록했다고 발표했다. 이는 다양한 신작 출시와 기존 인기 게임의 성공적인 업데이트에 기인한다. 특히 '야운'과 '몽환서유' 등의 타이틀이 두드러진 성장을 보였다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook </span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/08/576622/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">트럼프 행정명령, 금융기관 결제 서비스 제한 금지</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">트럼프 전 미국 대통령이 금융기관이 '브랜드 평판 보호'를 이유로 결제 서비스를 제한하지 못하도록 하는 행정명령에 서명했다. 이는 최근 Steam에서의 결제 처리 문제와 관련이 있는 것으로 보인다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook </span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/08/576612/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <h3 style="margin: 0 0 8px; font-size: 16px; color: #86efac; font-weight: bold;">위챗 미니게임 매출 20% 증가</h3>
+            <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: #d1d5db;">텐센트는 2분기 동안 위챗 미니게임의 총 매출이 전년 대비 20% 증가했다고 밝혔다. 이러한 성장은 두드러지는 신규 게임 출시와 플랫폼화 전략이 주요한 역할을 했다.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <p style="font-size: 12px; color: #86efac; margin: 0;">
+                    <span class="source-tag">GameLook </span> 
+                  </p>
+                </td>
+                <td align="right" width="110">
+                  <a href="http://www.gamelook.com.cn/2025/08/576615/" class="btn-primary">자세히 보기 →</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </td>
+</tr>
+          <tr>
+<td class="container-padding main-content" style="padding: 0 20px 30px;">
+<h2 class="section-title" style="letter-spacing: -0.5pt;">📢 주요 헤드라인</h2>
+
+<!-- 규제 & 이슈 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #ef4444 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  규제 & 이슈
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/73578/valve-explain-why-using-paypal-for-steam-purchases-isnt-currently-an-option-in-a-whole-bunch-of-countries" style="color: #ef4444; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/73578/valve-explain-why-using-paypal-for-steam-purchases-isnt-currently-an-option-in-a-whole-bunch-of-countries" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">Valve, PayPal이 여러 국가에서 Steam 결제를 중단한 이유는 성인 콘텐츠 검열 때문이라고 확인</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=290704" style="color: #ef4444; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=290704" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">《메이플스토리》 외주사 직원, NEXT 전시회 업데이트 내용 사전 유출, 법원 판결 배상금 216만 원</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 게임 출시 & 발표 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #059669 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  게임 출시 & 발표
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/73543/steam-rogue-lite-strategy-game-cloverpit" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/73543/steam-rogue-lite-strategy-game-cloverpit" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">《클로버 핏》 곧 출시, 중독성 높은 도박 인생 시뮬레이션 게임</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-08-14</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/73576/ratatan-gets-a-new-early-access-release-date" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/73576/ratatan-gets-a-new-early-access-release-date" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">《Ratatan》 신 조기 접근 버전 출시일 발표</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=290699" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=290699" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">절찬 속 청년 어드벤처 게임 《학원 문호 야수》 사전 예약 시작, 11월 일본 출시 예정</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=290703" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=290703" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">《일본 사고 물건 관찰 협회》 PC와 스마트폰 플랫폼에 동시 출시로 심야 사고 집 감시 도전</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 매출 & 성과 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #2563eb !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  매출 & 성과
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/08/576622/" style="color: #2563eb; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/08/576622/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">넷이즈 2분기 게임 수익 14.6% 증가, Ding Lei: 연운 기대 초과, 몽환 신기록, <The Forgotten Sea> 매우 자신 있어</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/08/576551/" style="color: #2563eb; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/08/576551/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;"><명말: 원허의 날개> 스토리 변경! "명제 황제는 혼수상태, 명군 보스는 불멸": 게임 수익 2억 위안 초과 예측</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 업데이트 & 패치 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #7c3aed !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  업데이트 & 패치
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/73579/coral-island-1-2-multiplayer-and-romance-update" style="color: #7c3aed; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/73579/coral-island-1-2-multiplayer-and-romance-update" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">높은 평가 생활 시뮬레이션 게임 Coral Island, 멀티플레이 오픈으로 결혼과 자녀 출산 기능 추가</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/08/576563/" style="color: #7c3aed; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="http://www.gamelook.com.cn/2025/08/576563/" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">조상들의 법도 변하는가? 리그 오브 레전드 사상 최대 조작 혁신: WASD 운영 버전 곧 출시</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GameLook · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- IP & 콜라보 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #059669 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  IP & 콜라보
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/73552/pokemon-mezastar-in-sega-taiwan-card-game-party" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://www.4gamers.com.tw/news/detail/73552/pokemon-mezastar-in-sega-taiwan-card-game-party" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">《Pokemon MEZASTAR》 SEGA Taiwan 카드 게임 파티에서 카드 모형과 부채 선보임</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">4Gamers · 25-08-14</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 커뮤니티 & 이벤트 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+<div style="padding: 6px 12px; background-color: #059669 !important; color: white; border-radius: 20px; display: inline-block; font-weight: bold; font-size: 13px; margin-bottom: 15px; letter-spacing: -0.5pt;">
+  커뮤니티 & 이벤트
+</div>
+
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li class="news-item" style="position: relative; margin-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=290671" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=290671" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">《SD 건담 G 세대 영원》에 강적 등장 이벤트 "무사 건담 & 지휘관 건담" 예고</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+
+<li style="position: relative; border-bottom: none; padding-bottom: 0;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+    <tr>
+      <td width="20" valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=290702" style="color: #059669; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt;">&#x2295;</a>
+      </td>
+      <td valign="middle" style="vertical-align: middle;">
+        <a href="https://gnn.gamer.com.tw/detail.php?sn=290702" style="text-decoration: none;">
+          <div style="font-size: 14px; font-weight: bold; line-height: 1.3; letter-spacing: -0.5pt;">
+            <span style="color: #d1d5db;">《페이트/그랜드 오더》 일본판, 기간 한정 이벤트 "여름 섬 토끼 픽업 소환" 출시</span>
+            <span style="font-size: 12px; font-weight: normal; color: #9ca3af; margin-left: 8px; letter-spacing: -0.5pt;">GNN · 25-08-15</span>
+          </div>
+        </a>
+      </td>
+    </tr>
+  </table>
+</li>
+</ul>
+</div>
+
+<!-- 섹션 간격 추가 -->
+<div class="section-gap"></div>
+</td>
+</tr>
+          <tr>
+        <td style="padding: 0 20px 30px;">
+        <h2 class="section-title">📌 최다 언급 키워드</h2>
+        <div class="card" style="padding: 20px; background-color: #1e293b !important; border-radius: 10px; margin-bottom: 16px; border: 1px solid #374151; overflow: hidden;">
+        <!-- GameLook 키워드 -->
+        <div style="margin-bottom: 15px;">
+        <div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 GameLook 키워드</div>
+        <div>
+         <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">리그 오브 레전드 WASD</span>
+              </td>
+            </tr>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">넷이즈 2분기 수익</span>
+              </td>
+            </tr>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">WeChat 미니게임</span>
+              </td>
+            </tr>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#059669" style="background-color: #059669 !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">명말 원허의 날개</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        </div>
+
+        <!-- 4Gamers 키워드 -->
+        <div style="margin-bottom: 15px;">
+        <div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 4Gamers 키워드</div>
+        <div>
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">Coral Island 멀티플레이</span>
+              </td>
+            </tr>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">Valve PayPal 제한</span>
+              </td>
+            </tr>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">NEO BERLIN 2087</span>
+              </td>
+            </tr>
+          </table>
+          
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">전장 6 피해액</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        </div>
+
+        <!-- GNN 키워드 -->
+        <div>
+        <div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 GNN 키워드</div>
+        <div>
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">경계 제한 4</span>
+              </td>
+            </tr>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">페이트/그랜드 오더</span>
+              </td>
+            </tr>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">바다의 마법사</span>
+              </td>
+            </tr>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+            <tr>
+              <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+                <span style="color: white; font-size: 12px; font-weight: bold;">메이플스토리 유출</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        </div>
+        </div>
+        </td>
+        </tr>
+
+          <!-- 구분선 -->
+                <tr>
+                  <td align="center" style="padding: 0 20px;">
+                    <div style="max-width: 80px; height: 1px; background-color: #374151; margin: 0 auto 20px;"></div>
+                  </td>
+                </tr>
+
+                <!-- 푸터 시작 - 중화권 테마로 변경 -->
+                <tr>
+                  <td align="center" style="padding: 0 20px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 20px 0; border-spacing: 0;">
+                      <tr>
+                        <td align="center" style="padding: 40px 30px; background-color: #111827; border-radius: 0 0 12px 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <!-- 왼쪽 컬럼: 정보 -->
+                              <td style="vertical-align: top; padding-right: 40px; width: 60%;" class="footer-column footer-info">
+                                <p style="margin: 0 0 12px; font-size: 18px; color: #f9fafb; font-weight: 600; letter-spacing: -0.5px;">
+                                  Daily News - 중화권
+</p>
+<p style="margin: 0 0 15px; font-size: 13px; line-height: 1.7; color: 
+#9ca3af; letter-spacing: -0.5px;">
+    🚨기밀 유지: 관계자 외 외부 인원에게 링크 유출 및 공유를 금합니다.<br>
+    Azure OpenAI를 활용하여 자동 생성하는 일간 뉴스레터로, 매일 오전 8시에 최신 중화권 게임 뉴스를 수집하여 분석합니다.
+</p>
+
+                                
+                              </td>
+
+                              <!-- 오른쪽 컬럼: 링크들 -->
+                              <td style="vertical-align: top; width: 40%;" class="footer-column">
+                                <p style="margin: 0 0 14px; font-size: 16px; color: #f9fafb; font-weight: 600; letter-spacing: -0.5px;">
+                                  Quick Links
+                                </p>
+
+                                <a href="https://kwoka0507.github.io/GC-daily-news/" style="display: block; margin-bottom: 12px; padding: 12px 16px; background-color: #1e293b; border-left: 4px solid #059669; color: #f9fafb; text-decoration: none; font-size: 14px; border-radius: 0 4px 4px 0; transition: background-color 0.2s; letter-spacing: -0.5px;">
+                                  📚 지난 뉴스레터 아카이브
+                                </a>
+
+                                
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- 푸터 끝 -->
+              </table>
+            </td>
+          </tr>
+        </table>
+        </body>
+        </html>
